@@ -102,7 +102,6 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: 1579beb7aa2a6a54397357dee918bf85, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_Tag:
   m_SpeedParameter:
   m_MirrorParameter:
@@ -111,17 +110,12 @@ AnimatorState:
 =======
 =======
 >>>>>>> parent of 82d8da4... Merge branch 'master' of https://github.com/NSmocker/Drop_of_Blood
-=======
->>>>>>> parent of 82d8da4... Merge branch 'master' of https://github.com/NSmocker/Drop_of_Blood
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 <<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 82d8da4... Merge branch 'master' of https://github.com/NSmocker/Drop_of_Blood
-=======
 >>>>>>> parent of 82d8da4... Merge branch 'master' of https://github.com/NSmocker/Drop_of_Blood
 =======
 >>>>>>> parent of 82d8da4... Merge branch 'master' of https://github.com/NSmocker/Drop_of_Blood
