@@ -106,7 +106,6 @@ AnimatorState:
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
@@ -190,8 +189,6 @@ AnimatorState:
   m_TimeParameter: 
 >>>>>>> 10a192644261bf6d6fecaf56924752b849a5f64f
 >>>>>>> parent of 8820165... Revert "Актуализация версии"
-=======
->>>>>>> parent of 82d8da4... Merge branch 'master' of https://github.com/NSmocker/Drop_of_Blood
 --- !u!1102 &1102932643342746308
 AnimatorState:
   serializedVersion: 5
@@ -229,8 +226,22 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
+<<<<<<< HEAD
     m_State: {fileID: 1102311352784727904}
     m_Position: {x: 24, y: 300, z: 0}
+=======
+    m_State: {fileID: 1102664439797555182}
+    m_Position: {x: -204, y: 492, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102908923081951484}
+    m_Position: {x: 276, y: 492, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102423194467600906}
+    m_Position: {x: 36, y: 492, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102311352784727904}
+    m_Position: {x: 24, y: 372, z: 0}
+>>>>>>> 10a192644261bf6d6fecaf56924752b849a5f64f
   - serializedVersion: 1
     m_State: {fileID: 1102932643342746308}
     m_Position: {x: 24, y: 204, z: 0}
