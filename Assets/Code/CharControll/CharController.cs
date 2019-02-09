@@ -4,83 +4,127 @@ using UnityEngine;
 
 public class CharController : MonoBehaviour
 {
-    public float move_speed;
+
+
+    public Animator anim;
+    public GameObject cam;
+    public GameObject isGroundedCheker;
+    public Rigidbody rb;
+    public float JumpForce, moveSpeed, radius;
+    public bool collided, grounded;
+    public int motion;
+   
+
+
+    public float Rotation_Smoothness; //Believe it or not, adjusting this before anything else is the best way to go.
+    private float Resulting_Value_from_Input;
+    private Quaternion Quaternion_Rotate_From;
+    private Quaternion Quaternion_Rotate_To;
     
-    public float Vertical_Velocity, Jump_Force;
-    public CharacterController controller;
-    public GameObject VisualBody;
-    public Vector3 move_dir_force;
-    public Animator kailina_anim;
-    // Start is called before the first frame update
+    // Use this for initialization
+    void Start()
+    {
+      
+        radius = GetComponent<CapsuleCollider>().radius;
+        rb = GetComponent<Rigidbody>();
+    }
 
-    public GameObject Cam;
+    // Update is called once per frame
+    void Update()
+    {
+            Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            if (NextDir != Vector3.zero)
+            {
+                Quaternion_Rotate_From = transform.rotation;
+                var lol = Quaternion.LookRotation(cam.transform.TransformDirection(NextDir));
+                var eLol = lol.eulerAngles;
+                eLol.x = 0;
+                eLol.z = 0;
 
+                Quaternion_Rotate_To = Quaternion.Euler(eLol);
+                transform.rotation = Quaternion.Lerp(Quaternion_Rotate_From, Quaternion_Rotate_To, Time.deltaTime * Rotation_Smoothness);
+            }
+    }
 
 
     Vector3 GetRotationFromCamera()
     {
 
-
         var thisRotation = transform.localEulerAngles;
-        thisRotation.y = Cam.transform.localEulerAngles.y;
+        thisRotation.y = cam.transform.localEulerAngles.y;
         return thisRotation;
     }
-    // Використовувати тільки у Update/FixedUpdate
-    void AnimationSeqence()
+    bool GroundCheck()
     {
-        Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        if (NextDir != Vector3.zero) { kailina_anim.SetBool("isMoving", true); } else { kailina_anim.SetBool("isMoving", false); };
-
-        kailina_anim.speed = 1;
-
+        RaycastHit hit;
+        var temp = Physics.SphereCast(isGroundedCheker.transform.position,radius, -transform.up, out hit, radius);
+        try { Debug.Log(hit.collider.name); }
+        catch { }
+        return temp;
     }
 
-
-    void RotationSequence()
+    public void OnCollisionEnter()
     {
-        Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-    //    NextDir = transform.TransformDirection(NextDir);
-        if (NextDir != Vector3.zero) { transform.localEulerAngles = GetRotationFromCamera(); }
-        if (NextDir != Vector3.zero) VisualBody.transform.localRotation = Quaternion.LookRotation(NextDir);// VisualBody
-
+        collided = true;
     }
-
-    public void MoveSequence()
+    public void OnCollisionExit()
     {
-       
+        collided = false;
+    }
+    public void HeroMove()
+    {
+        var h = Input.GetAxis("Horizontal") ;
+        var v = Input.GetAxis("Vertical") ;
 
-
-        var move_dir_force = new Vector3(Input.GetAxis("Horizontal")*move_speed*Time.deltaTime,0, Input.GetAxis("Vertical") * move_speed * Time.deltaTime);
-        if (controller.isGrounded)
+        if (h != 0 || v != 0)
         {
-            Vertical_Velocity = -1;
-            if(Input.GetButton("Jump")) Vertical_Velocity = Jump_Force*Time.deltaTime;
+            motion = 1;
         }
         else
-        {   
-            Vertical_Velocity -= 1 * Time.deltaTime;
+        { motion = 0; }
+        
+    }
+
+
+    void FixedUpdate()
+    {
+
+        grounded = GroundCheck();
+        HeroMove();
+        if (grounded==true)
+        {
+            if (motion != 0)
+            {
+                rb.velocity = transform.TransformDirection(new Vector3(0, rb.velocity.y, 1 * moveSpeed));
+
+            }
+            else
+            {
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            }
+
+           if (Input.GetButton("Jump"))
+            {
+               rb.AddRelativeForce((Vector3.up * JumpForce));
+            }
         }
-        move_dir_force.y = Vertical_Velocity;
-        move_dir_force = transform.TransformDirection(move_dir_force);
-        controller.Move(move_dir_force);
+        else
+        {
+            if (collided)
+            {
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            }
+            else
+            { rb.velocity = transform.TransformDirection(new Vector3(0, rb.velocity.y, 15)); }
+        }
+        anim.SetInteger("isMoving", motion);
+
+
+
+
+
+
 
     }
 
-    void Start()
-    {
-           
-      
-    }
-    private void FixedUpdate()
-    {
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        AnimationSeqence();
-        MoveSequence();// должен идти первым
-        RotationSequence();
-   
-    }
 }
