@@ -222,6 +222,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100134, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100136, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100142, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100140, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -479,22 +495,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100130, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100134, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100136, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100140, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100142, guid: be2f56957b022eb4ab2eeb5968822be4, type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
@@ -785,7 +785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319640848}
   m_LocalRotation: {x: 0.047747806, y: -0, z: -0, w: 0.9988594}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.48, y: 0, z: 7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -850,17 +850,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 319640848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43d0b9bfd522ec845bf4656e4c4c1b0e, type: 3}
+  m_Script: {fileID: 11500000, guid: df0942cb8844178468819fb750d3ca26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1391501282}
   Distance: 5
-  PermamentDistance: 0
-  xSpeed: 120
+  xSpeed: 250
   ySpeed: 120
   yMinLimit: -20
   yMaxLimit: 80
-  VisualBody: {fileID: 601508085}
+  isPKM: 0
 --- !u!114 &319640853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,12 +1060,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595733625}
   m_CullTransparentMesh: 0
---- !u!1 &601508085 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100138, guid: be2f56957b022eb4ab2eeb5968822be4,
-    type: 3}
-  m_PrefabInstance: {fileID: 16188180}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &601508089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400138, guid: be2f56957b022eb4ab2eeb5968822be4,
