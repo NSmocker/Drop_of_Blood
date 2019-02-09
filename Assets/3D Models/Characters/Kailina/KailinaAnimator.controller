@@ -100,19 +100,11 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 1579beb7aa2a6a54397357dee918bf85, type: 3}
-<<<<<<< HEAD
   m_Tag:
   m_SpeedParameter:
   m_MirrorParameter:
   m_CycleOffsetParameter:
   m_TimeParameter:
-=======
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
->>>>>>> parent of 82d8da4... Merge branch 'master' of https://github.com/NSmocker/Drop_of_Blood
 --- !u!1102 &1102932643342746308
 AnimatorState:
   serializedVersion: 5
