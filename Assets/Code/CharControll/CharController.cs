@@ -63,14 +63,7 @@ public class CharController : MonoBehaviour
         return temp;
     }
 
-    public void OnCollisionEnter()
-    {
-        collided = true;
-    }
-    public void OnCollisionExit()
-    {
-        collided = false;
-    }
+ 
     public void HeroMove()
     {
         var h = Input.GetAxis("Horizontal") ;
@@ -111,6 +104,10 @@ public class CharController : MonoBehaviour
             anim.SetInteger("isMoving", 0);
 
             rb.velocity = transform.TransformDirection(new Vector3(0, rb.velocity.y, (motion * moveSpeed)/2));
+            if (collided)
+            {
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            }
 
         }
            

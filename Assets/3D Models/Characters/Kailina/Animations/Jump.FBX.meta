@@ -196,7 +196,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Jump
       takeName: "\u041A\u0430\u0439\u043B\u0456\u043D\u0430Anim"
-      firstFrame: 10
+      firstFrame: 0
       lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
