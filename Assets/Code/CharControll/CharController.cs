@@ -58,7 +58,7 @@ public class CharController : MonoBehaviour
     {
         RaycastHit hit;
         var temp = Physics.SphereCast(isGroundedCheker.transform.position,radius, -transform.up, out hit, radius);
-        try { Debug.Log(hit.collider.name); }
+        try { /*Debug.Log(hit.collider.name); */}
         catch { }
         return temp;
     }
@@ -90,34 +90,31 @@ public class CharController : MonoBehaviour
     {
 
         grounded = GroundCheck();
+        anim.SetBool("Landed", grounded);
         HeroMove();
+
+
         if (grounded==true)
         {
-            if (motion != 0)
+            anim.SetBool("Jump", false);
+            anim.SetInteger("isMoving", motion);
+            rb.velocity = transform.TransformDirection(new Vector3(0, rb.velocity.y, motion * moveSpeed));
+            if (Input.GetButton("Jump"))
             {
-                rb.velocity = transform.TransformDirection(new Vector3(0, rb.velocity.y, 1 * moveSpeed));
-
-            }
-            else
-            {
-                rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            }
-
-           if (Input.GetButton("Jump"))
-            {
-               rb.AddRelativeForce((Vector3.up * JumpForce));
+               rb.AddRelativeForce((Vector3.up * JumpForce*100));
+                anim.SetBool("Jump", true);
             }
         }
-        else
-        {
-            if (collided)
-            {
-                rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            }
-            else
-            { rb.velocity = transform.TransformDirection(new Vector3(0, rb.velocity.y, 15)); }
+      
+        if (grounded == false)
+          {
+            anim.SetInteger("isMoving", 0);
+
+            rb.velocity = transform.TransformDirection(new Vector3(0, rb.velocity.y, (motion * moveSpeed)/2));
+
         }
-        anim.SetInteger("isMoving", motion);
+           
+        
 
 
 

@@ -34,7 +34,7 @@ MonoBehaviour:
     value: 1
   preset:
     overrideState: 1
-    value: 1
+    value: 5
   maximumIterationCount:
     overrideState: 0
     value: 16
@@ -46,10 +46,10 @@ MonoBehaviour:
     value: 8
   maximumMarchDistance:
     overrideState: 1
-    value: 20
+    value: 50
   distanceFade:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 0.509
   vignette:
     overrideState: 0
     value: 0.5
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
