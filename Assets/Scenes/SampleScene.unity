@@ -655,7 +655,7 @@ MonoBehaviour:
   collided: 0
   grounded: 0
   motion: 0
-  Rotation_Smoothness: 10
+  Rotation_Smoothness: 18
 --- !u!1 &113408496
 GameObject:
   m_ObjectHideFlags: 0
