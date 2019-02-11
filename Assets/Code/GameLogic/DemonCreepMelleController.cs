@@ -6,7 +6,9 @@ public class DemonCreepMelleController : MonoBehaviour
 {
     PersonStatus status;
     public GameObject target;
-    public Transform []path;
+    public Transform []WeyPoints;
+    public Rigidbody rb;
+    public float move_speed; // скорость движения крипа.
 
     public int current_weypoint=0;
     public float distance_to_point;
@@ -15,11 +17,32 @@ public class DemonCreepMelleController : MonoBehaviour
     {
         current_weypoint = 0;
         status = GetComponent<PersonStatus>();
+        rb = GetComponent<Rigidbody>();// Библиотека с физикой
     }
 
-    public void GoToWeyPoint()
+    public void GoToWeyPoint() 
     {
-        //to do //Test for UnityGitHub
+        // первым делом, поворачиваем морду к вражине (ну или к точке передвижения)
+        transform.LookAt(WeyPoints[current_weypoint]);
+
+        if (current_weypoint != WeyPoints.Length) // пока мы не на последней точке
+        {
+            distance_to_point = Vector3.Distance(transform.position, WeyPoints[current_weypoint].position); // Смотрим дистанцию
+
+            if (distance_to_point <= 1) //  Если дистанция Метр или меньше  
+            { current_weypoint++; } // выбираем следующую точку 
+            else // Иначе
+            {
+
+                rb.velocity = transform.TransformDirection(0, rb.velocity.y, 1 * move_speed); // Бежим в направлении "Напрямую"
+                // До этого, мы повернулись носом к точке, или врагу. По этому бежать будем к врагу. 
+
+            } // Двигаемся к нужной точке
+
+
+
+
+        }
 
     }
 
@@ -28,21 +51,14 @@ public class DemonCreepMelleController : MonoBehaviour
     void Update()
     {
 
-        if (!target)
+        if (!target) // Если у  нас в таргете никого нету
         {
-            if (current_weypoint != path.Length)
-            {
-                distance_to_point = Vector3.Distance(transform.position,path[current_weypoint].position);
-                if (distance_to_point <= 1) { current_weypoint++; } else { GoToWeyPoint(); }
-                //my test
-
-
-            }
-            //TODO go to path points
+            GoToWeyPoint();
         }
-        else
+        else // Инчае 
         {
-            //TODO KILLLL!!!!
+
+            //УБИИИИТЬЬЬ!!!!!11!
         }
     }
 }
