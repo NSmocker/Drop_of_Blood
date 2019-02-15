@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharController : MonoBehaviour
 {
 
-
+    public Vector3 vel;
     public Animator anim;
     public GameObject cam;
     public GameObject isGroundedCheker;
@@ -32,6 +32,8 @@ public class CharController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //temp
+        vel = rb.velocity;
             Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
             if (NextDir != Vector3.zero)
             {

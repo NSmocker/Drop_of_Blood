@@ -20,24 +20,27 @@ public class DemonCreepMelleController : MonoBehaviour
         rb = GetComponent<Rigidbody>();// Библиотека с физикой
     }
 
+    public void RotateToTarget(Transform target_pos)
+    {   
+        var pos = new Vector3(target_pos.position.x,transform.position.y, target_pos.position.z);
+        distance_to_point = Vector3.Distance(transform.position, pos); // Смотрим дистанцию
+        transform.LookAt(pos);// Перезаписываем высоту и используем её
+    }
+
     public void GoToWeyPoint() 
     {
         // первым делом, поворачиваем морду к вражине (ну или к точке передвижения)
-        transform.LookAt(WeyPoints[current_weypoint]);
 
+        RotateToTarget(WeyPoints[current_weypoint]);
         if (current_weypoint != WeyPoints.Length) // пока мы не на последней точке
         {
-            distance_to_point = Vector3.Distance(transform.position, WeyPoints[current_weypoint].position); // Смотрим дистанцию
-
             if (distance_to_point <= 1) //  Если дистанция Метр или меньше  
             { current_weypoint++; } // выбираем следующую точку 
             else // Иначе
             {
-
-                rb.velocity = transform.TransformDirection(0, rb.velocity.y, 1 * move_speed); // Бежим в направлении "Напрямую"
+                 rb.velocity = transform.TransformDirection(0, rb.velocity.y, 1 * move_speed); // Бежим в направлении "Напрямую"
                 // До этого, мы повернулись носом к точке, или врагу. По этому бежать будем к врагу. 
-
-            } // Двигаемся к нужной точке
+             } // Двигаемся к нужной точке
 
 
 

@@ -29,7 +29,218 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Mesh_0063
-  externalObjects: {}
+    6400000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0024.rip
+    second: {fileID: 2100000, guid: 7474a30299e3b844aa31540bda2ac2d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0028.rip
+    second: {fileID: 2100000, guid: 6fa2a5a46694c3d44a68fb4c01ce25a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0034.rip
+    second: {fileID: 2100000, guid: 7500d98ac79eccf4b95c61eb6ad5d772, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0036.rip
+    second: {fileID: 2100000, guid: 8e765938018f155429eb0b45a6f03aba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0041.rip
+    second: {fileID: 2100000, guid: 417742871d0068f4288909dfd953d316, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0047.rip
+    second: {fileID: 2100000, guid: 400a396a46bac7e43b31912752ee3c75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0048.rip
+    second: {fileID: 2100000, guid: 6f57e858e19a1fd439973d4b6dfbf21e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0049.rip
+    second: {fileID: 2100000, guid: d0a4468ca36db3443b98baf4831df5be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0050.rip
+    second: {fileID: 2100000, guid: aa2437b95a9b63d45bb8fbf0c178171f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0051.rip
+    second: {fileID: 2100000, guid: 82d2eff768444854ab70f46e68c8fd3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0052.rip
+    second: {fileID: 2100000, guid: 1a399020169bd9e4eb29454c48b64548, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0053.rip
+    second: {fileID: 2100000, guid: d88aedd2eb8fa004fbdf831c666d8806, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0055.rip
+    second: {fileID: 2100000, guid: 44a0017d1a8612d4288c50092f2a6f5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0062.rip
+    second: {fileID: 2100000, guid: ee1682047199b8149922c659b12c68df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0063.rip
+    second: {fileID: 2100000, guid: de3155783ad9d5e4dba0a860dfcede50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0065.rip
+    second: {fileID: 2100000, guid: 7c6f5eef14df0c646ba73cb60464e757, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0066.rip
+    second: {fileID: 2100000, guid: 2e442d9c21ee7a44b89a24ed3d9dd774, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0067.rip
+    second: {fileID: 2100000, guid: 5270f88ba7bddb840976b1591510ae9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0107.rip
+    second: {fileID: 2100000, guid: 25de15ee89589aa46b5a2dfe40f3ee0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0108.rip
+    second: {fileID: 2100000, guid: 99a27913ce3c0104d9f1e04c5d233582, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesh_0109.rip
+    second: {fileID: 2100000, guid: f44787809fa22d1488516ddad1b50afc, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0028_0
+    second: {fileID: 2800000, guid: d8c1bc48c012fb040b35f0d678becc24, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0032_0
+    second: {fileID: 2800000, guid: 876355c5e109d1d46acd3b2b9f6e8e6d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0038_0
+    second: {fileID: 2800000, guid: aa39f5a0af33ef546979f32ab9e1130b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0040_0
+    second: {fileID: 2800000, guid: 86dd31a96d2de0f4fb7641ef23c9829e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0045_0
+    second: {fileID: 2800000, guid: 4c1511179b7fac347ab7056e6d5475cd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0051_0
+    second: {fileID: 2800000, guid: 4506e034c4938e94281530403badf19d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0052_0
+    second: {fileID: 2800000, guid: 69b3227109024c645a0d433ae252e2eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0053_0
+    second: {fileID: 2800000, guid: e7e07d05336025f43af11e291e7333e1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0054_0
+    second: {fileID: 2800000, guid: aaa1606399c58b048948459152240baa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0055_0
+    second: {fileID: 2800000, guid: a0eb43e517aeef24aa1191f41531098e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0056_0
+    second: {fileID: 2800000, guid: 87788cb15436213478f69216d92d89f0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0057_0
+    second: {fileID: 2800000, guid: 8116ba4760f0c834bb61c3ab20c97efc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0059_0
+    second: {fileID: 2800000, guid: e1c7deee601b66e40b3cf0ec889955c5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0060_0
+    second: {fileID: 2800000, guid: 05345dec6cf5c724a91254eef92c1ca7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0061_0
+    second: {fileID: 2800000, guid: 293c1b7c9dce33146af1475fc8eccbdd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0062_0
+    second: {fileID: 2800000, guid: 2d242683cb767a548866c3a0f5584cd0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0063_0
+    second: {fileID: 2800000, guid: 5287108ddc9183a4a95f4c202ece5f0e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0064_0
+    second: {fileID: 2800000, guid: 90f497cab50954b408c64e20286f7302, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0087_0
+    second: {fileID: 2800000, guid: 50da17225cfe092479e5a1a32d4b2258, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0088_0
+    second: {fileID: 2800000, guid: 8e0f4dd9110300446bf33661d1ad6331, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tex_0089_0
+    second: {fileID: 2800000, guid: 9528d3012cf17a74fbbc90dd480c51c1, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -60,9 +271,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 25
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
