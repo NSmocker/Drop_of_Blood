@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DemonCreepMelleController : MonoBehaviour
@@ -10,8 +11,35 @@ public class DemonCreepMelleController : MonoBehaviour
     public Rigidbody rb;
     public float move_speed; // скорость движения крипа.
 
+
     public int current_weypoint=0;
     public float distance_to_point;
+
+    public Collider[] objects;
+    public GameObject[] Persons;
+
+    public void ScanEnviro()
+    {
+        objects = Physics.OverlapSphere(transform.position, 10f);
+
+
+        foreach(Collider x in objects)
+        {
+            PersonStatus st = x.gameObject.GetComponent<PersonStatus>();
+            if(st!=null && !Persons.Contains(x.gameObject))Persons = Persons.Concat(new GameObject[]{ x.gameObject}).ToArray();
+            st = null;
+        }
+
+        foreach (GameObject x in Persons)
+        {
+         if (!objects.Contains(x.GetComponent<Collider>())) Persons = Persons.Where(val => val != x).ToArray();
+        }
+
+
+
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +81,7 @@ public class DemonCreepMelleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ScanEnviro();
 
         if (!target) // Если у  нас в таргете никого нету
         {
