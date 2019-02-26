@@ -14,10 +14,13 @@ ModelImporter:
     2100004: Mesh_0330.rip
     2300000: Mesh_0329
     2300002: Mesh_0330
+    2300004: //RootNode
     3300000: Mesh_0329
     3300002: Mesh_0330
+    3300004: //RootNode
     4300000: Mesh_0329
     4300002: Mesh_0330
+    4300004: RadiantMelleHumanMesh
   externalObjects: {}
   materials:
     importMaterials: 1

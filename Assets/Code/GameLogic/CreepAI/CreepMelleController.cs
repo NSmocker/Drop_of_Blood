@@ -18,7 +18,7 @@ public class CreepMelleController : MonoBehaviour
     public Collider[] objects;
     public GameObject[] Persons;
 
-
+ 
 
 
     public void ScanEnviro()
@@ -35,40 +35,30 @@ public class CreepMelleController : MonoBehaviour
          if (!objects.Contains(x.GetComponent<Collider>())) Persons = Persons.Where(val => val != x).ToArray();
         }
     }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        current_weypoint = 0;
-        status = GetComponent<PersonStatus>();
-        rb = GetComponent<Rigidbody>();// Библиотека с физикой
-    }
-
     public void RotateToTarget(Transform target_pos)
-    {   
-        var pos = new Vector3(target_pos.position.x,transform.position.y, target_pos.position.z);
+    {
+        var pos = new Vector3(target_pos.position.x, transform.position.y, target_pos.position.z);
         distance_to_point = Vector3.Distance(transform.position, pos); // Смотрим дистанцию
         transform.LookAt(pos);// Перезаписываем высоту и используем её
     }
-
-    public void GoToWeyPoint() 
+    public void GoToWeyPoint()
     {
+        status.isMoving = true;
+        status.isAttacking = false;
+
         // первым делом, поворачиваем морду к вражине (ну или к точке передвижения)
 
         RotateToTarget(WeyPoints[current_weypoint]);
         move_speed = status.move_speed;// Смотрим какая у нас скорость движения.
-
-
         if (current_weypoint != WeyPoints.Length) // пока мы не на последней точке
         {
             if (distance_to_point <= 1) //  Если дистанция Метр или меньше  
             { current_weypoint++; } // выбираем следующую точку 
             else // Иначе
             {
-                 rb.velocity = transform.TransformDirection(0, rb.velocity.y, 1 * move_speed); // Бежим в направлении "Напрямую"
-                // До этого, мы повернулись носом к точке, или врагу. По этому бежать будем к врагу. 
-             } // Двигаемся к нужной точке
+                rb.velocity = transform.TransformDirection(0, rb.velocity.y, 1 * move_speed); // Бежим в направлении "Напрямую"
+                                                                                              // До этого, мы повернулись носом к точке, или врагу. По этому бежать будем к врагу. 
+            } // Двигаемся к нужной точке
 
 
 
@@ -76,7 +66,22 @@ public class CreepMelleController : MonoBehaviour
         }
 
     }
+    public void Attack()
+    {
+        status.isMoving = false;
+        status.isAttacking = true;
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        current_weypoint = 0;
+        status = GetComponent<PersonStatus>();
+        rb = GetComponent<Rigidbody>();// Библиотека с физикой
+        status.isCreep = true;
+    }
+
+ 
 
     // Update is called once per frame
     void Update()
@@ -90,7 +95,7 @@ public class CreepMelleController : MonoBehaviour
         else // Инчае 
         {
 
-            //УБИИИИТЬЬЬ!!!!!11!
+     
         }
     }
 }
