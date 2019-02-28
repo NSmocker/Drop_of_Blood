@@ -10,12 +10,13 @@ public partial class PersonStatus : MonoBehaviour
     public float colliderRadius;
     public float distanceToGround;
     public float JumpForce;
+    public CapsuleCollider mc;
 
 
-    public int hp_current,hp_max,mp_max, mp_current;// Показатели ХП и маны.
+    public int hp_current, hp_max, mp_max, mp_current;// Показатели ХП и маны.
     public int damage;//Дамаг
     public int move_speed;// Скорость бега. 
-    
+
 
     public bool isDead;
     public bool isCreep;
@@ -27,17 +28,37 @@ public partial class PersonStatus : MonoBehaviour
 
     public gameCategory category;
     public gameSide side;
-    
+
     public GameObject isGroundedCheker;
 
-    public float Rotation_Smoothness; 
+    public float Rotation_Smoothness;
     private float Resulting_Value_from_Input;
     private Quaternion Quaternion_Rotate_From;
     private Quaternion Quaternion_Rotate_To;
 
 
+    // Обработка логики склонов
 
+    public float _height;
+    public float _heightPadding;
+    public LayerMask ground;
+    public float maxGroundAngle = 120;
+    public bool debug;
+    float groundAngle;
 
+    Vector3 forward;
+    RaycastHit _hitInfo;
+
+    bool GroundCheck()
+    {
+       // RaycastHit hit;
+//        var temp = Physics.SphereCast(isGroundedCheker.transform.position, colliderRadius, -transform.up, out hit, distanceToGround);
+        var temp = Physics.SphereCast(isGroundedCheker.transform.position, colliderRadius, -transform.up, out _hitInfo, _height- _heightPadding);
+
+        //try { Debug.Log(hit.collider.name); } catch (Exception e) { }
+        isGrounded = temp;
+        return temp;
+    }
 
 
 
@@ -77,6 +98,8 @@ public partial class PersonStatus : MonoBehaviour
             UserInput();
             HeroMove();
             HeroRotation();
+       
+
             anim.SetBool("isGrounded", isGrounded);
             anim.SetBool("isJumping", isJumping);   
         }
@@ -99,34 +122,36 @@ public partial class PersonStatus : MonoBehaviour
 
         if (isGrounded == false)
         {
-            anim.applyRootMotion = false;
+          
             transform.Translate((Vector3.forward*v)/10, Space.Self);
+
 
         }
         if (isGrounded == true)
         {
-            anim.applyRootMotion = true;
+            if(isMoving)rb.velocity = transform.TransformDirection(Vector3.forward * move_speed);
+            if (!isMoving) rb.velocity = transform.TransformDirection(Vector3.forward * 0);
+
+
             if (isJumping == true)
             {
-                rb.AddRelativeForce(Vector3.up * JumpForce * 10);
+               rb.AddRelativeForce(Vector3.up * JumpForce * 10);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, _hitInfo.point.y, transform.position.z);
             }
         }
         }
-    bool GroundCheck()
-    {
-        RaycastHit hit;
-        var temp = Physics.SphereCast(isGroundedCheker.transform.position, colliderRadius, -transform.up, out hit,distanceToGround);
-        //try { Debug.Log(hit.collider.name); } catch (Exception e) { }
-        isGrounded = temp;
-        return temp;
-    }
-
+ 
     void Start()
     {
+        mc = GetComponent<CapsuleCollider>();
+
         colliderRadius = GetComponent<CapsuleCollider>().radius;
         distanceToGround = GetComponent<CapsuleCollider>().height/2;
-      
-       if(category!=gameCategory.Hero)try { anim = GetComponent<Animator>(); rb = GetComponent<Rigidbody>(); } catch (Exception e) { Debug.Log(e.Message); }
+        _height = GetComponent<CapsuleCollider>().height;
+        if (category!=gameCategory.Hero)try { anim = GetComponent<Animator>(); rb = GetComponent<Rigidbody>(); } catch (Exception e) { Debug.Log(e.Message); }
 
     }
 
