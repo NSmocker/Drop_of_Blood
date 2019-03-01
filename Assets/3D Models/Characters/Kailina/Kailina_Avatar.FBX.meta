@@ -72,6 +72,8 @@ ModelImporter:
     100132: Hair
     100134: //RootNode
     100136: KailinaBody
+    100138: DaggerLeft
+    100140: DaggerRight
     400000: Bip001
     400002: Bip001 Footsteps
     400004: Bip001 Head
@@ -141,6 +143,8 @@ ModelImporter:
     400132: Hair
     400134: //RootNode
     400136: KailinaBody
+    400138: DaggerLeft
+    400140: DaggerRight
     2100000: Gigai
     2100002: Eye
     2100004: AsuraBracersWhite

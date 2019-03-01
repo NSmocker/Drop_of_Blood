@@ -1382,8 +1382,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271885305}
-  m_LocalRotation: {x: -0.07022386, y: 0.92977643, z: 0.2558252, w: 0.25522134}
-  m_LocalPosition: {x: 63.53437, y: -12.095451, z: 206.17244}
+  m_LocalRotation: {x: 0.14647692, y: 0.0041489936, z: 0.0006148364, w: -0.98920524}
+  m_LocalPosition: {x: 1336.4835, y: -1868.7595, z: -4336.631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6607,36 +6607,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 530710574, guid: 468c908eca924f542975baa1144938bb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2128523770, guid: 468c908eca924f542975baa1144938bb, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 572562258, guid: 468c908eca924f542975baa1144938bb, type: 3}
-      propertyPath: m_Center.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 572562257, guid: 468c908eca924f542975baa1144938bb, type: 3}
-      propertyPath: move_speed
+    - target: {fileID: 46273662202606368, guid: 468c908eca924f542975baa1144938bb,
+        type: 3}
+      propertyPath: JumpForce
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5714823495600535939, guid: 468c908eca924f542975baa1144938bb,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 1c649503e2d464949ba7777760c1d8c6, type: 2}
-    - target: {fileID: 5714823495600535939, guid: 468c908eca924f542975baa1144938bb,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7343564402144493526, guid: 468c908eca924f542975baa1144938bb,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 46273662202606368, guid: 468c908eca924f542975baa1144938bb,
         type: 3}
@@ -6646,12 +6620,12 @@ PrefabInstance:
     - target: {fileID: 46273662202606368, guid: 468c908eca924f542975baa1144938bb,
         type: 3}
       propertyPath: move_speed
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 46273662202606368, guid: 468c908eca924f542975baa1144938bb,
+    - target: {fileID: 5714823495600535939, guid: 468c908eca924f542975baa1144938bb,
         type: 3}
-      propertyPath: _heightPadding
-      value: 0.25
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 468c908eca924f542975baa1144938bb, type: 3}

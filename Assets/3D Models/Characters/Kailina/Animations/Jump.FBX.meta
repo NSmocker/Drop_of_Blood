@@ -74,6 +74,7 @@ ModelImporter:
     100136: //RootNode
     100138: Kailina001_0
     100140: Object001
+    100142: KailinaBody
     400000: Bip001
     400002: Bip001 Footsteps
     400004: Bip001 Head
@@ -145,6 +146,7 @@ ModelImporter:
     400136: //RootNode
     400138: Kailina001_0
     400140: Object001
+    400142: KailinaBody
     2100000: Gigai
     2100002: Eye
     2100004: Mesh_0027.rip
@@ -153,10 +155,13 @@ ModelImporter:
     2100010: Mesh_0030.rip
     2100012: Mesh_0028.rip
     2100014: Hair
+    2100016: AsuraBracersWhite
+    2100018: AsuraBracersCloth
     4300000: Kailina001_0
     4300002: decals
     4300004: Object001
     4300006: Hair
+    4300008: KailinaBody
     7400000: Jump
     7400002: Landed
     7400004: InAir
@@ -165,6 +170,7 @@ ModelImporter:
     13700002: Hair
     13700004: Kailina001_0
     13700006: Object001
+    13700008: KailinaBody
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -179,14 +185,7 @@ ModelImporter:
     optimizeGameObjects: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'Bip001 L
-      Thigh' : position error = 38.163315 mm\n\t'Bip001 L Calf' : position error =
-      190.816589 mm\n\t'Bip001 L Foot' : position error = 217.036758 mm\n\t'Bip001
-      L Toe0' : position error = 114.688210 mm\n\t'Bip001 R Thigh' : position error
-      = 38.163322 mm\n\t'Bip001 R Calf' : position error = 190.816559 mm\n\t'Bip001
-      R Foot' : position error = 217.036850 mm\n\t'Bip001 R Toe0' : position error
-      = 114.688179 mm\n"
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -230,10 +229,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Landed
+      name: InAir
       takeName: "\u041A\u0430\u0439\u043B\u0456\u043D\u0430Anim"
-      firstFrame: 30
-      lastFrame: 60
+      firstFrame: 25
+      lastFrame: 96
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -241,34 +240,6 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: InAir
-      takeName: "\u041A\u0430\u0439\u043B\u0456\u043D\u0430Anim"
-      firstFrame: 25
-      lastFrame: 35
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 1
@@ -309,7 +280,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.0254
+    previousCalculatedGlobalScale: 0.049999997
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

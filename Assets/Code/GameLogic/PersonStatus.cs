@@ -65,6 +65,7 @@ public partial class PersonStatus : MonoBehaviour
     public void UserInput()
     {
        isJumping = Input.GetKey(KeyCode.Space);
+        isAttacking = Input.GetKey(KeyCode.Mouse0);
     }
 
 
@@ -98,7 +99,11 @@ public partial class PersonStatus : MonoBehaviour
             UserInput();
             HeroMove();
             HeroRotation();
-       
+            if (isAttacking == true)
+            {
+                anim.SetLayerWeight(1, 1f);
+            }else { anim.SetLayerWeight(1, 0f); }
+
 
             anim.SetBool("isGrounded", isGrounded);
             anim.SetBool("isJumping", isJumping);   
@@ -135,7 +140,10 @@ public partial class PersonStatus : MonoBehaviour
 
             if (isJumping == true)
             {
-               rb.AddRelativeForce(Vector3.up * JumpForce * 10);
+                var old = rb.velocity;
+                old.y = JumpForce;
+
+                rb.velocity = old;
             }
             else
             {
