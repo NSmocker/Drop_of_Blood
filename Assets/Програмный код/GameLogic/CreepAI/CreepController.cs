@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CreepMelleController : MonoBehaviour
+public class CreepController : MonoBehaviour
 {
 
 
@@ -11,6 +11,7 @@ public class CreepMelleController : MonoBehaviour
     PersonStatus status;
     int move_speed;
 
+    public Animator anim;
     public GameObject target;
     public Transform[] WeyPoints;
     public int current_weypoint=0;
@@ -18,7 +19,17 @@ public class CreepMelleController : MonoBehaviour
     public Collider[] objects;
     public GameObject[] Persons;
 
- 
+
+
+    public void AnimationControll()
+    {
+        anim.SetBool("isDead", status.isDead);
+        anim.SetBool("isMoving", status.isMoving);
+        anim.SetBool("isAttacking", status.isAttacking);
+
+    }
+
+
 
 
     public void ScanEnviro()
@@ -75,13 +86,14 @@ public class CreepMelleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         current_weypoint = 0;
         status = GetComponent<PersonStatus>();
         rb = GetComponent<Rigidbody>();// Библиотека с физикой
-        status.isCreep = true;
+        
     }
 
- 
+
 
     // Update is called once per frame
     void Update()
@@ -94,8 +106,7 @@ public class CreepMelleController : MonoBehaviour
         }
         else // Инчае 
         {
-
-     
+            Attack();
         }
     }
 }
