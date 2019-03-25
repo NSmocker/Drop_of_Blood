@@ -705,7 +705,7 @@ Transform:
   - {fileID: 1589275783}
   - {fileID: 1620833332}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &402868138
 PrefabInstance:
@@ -1294,7 +1294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &564809564
 Transform:
   m_ObjectHideFlags: 0
@@ -1321,12 +1321,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfafc6101f224d449a7e1b07e0da6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_timer: 0
+  spawn_cooldown: 0
+  spawn_delay: 0
   side: 0
   line: 
-  dire_bot: []
-  dire_top: []
-  radiant_bot: []
-  radiant_top: []
+  wey_points: []
   creeps_to_spawn: []
 --- !u!1 &618449740
 GameObject:
@@ -1671,7 +1671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &785088101
 Transform:
   m_ObjectHideFlags: 0
@@ -1698,12 +1698,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfafc6101f224d449a7e1b07e0da6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_timer: 0
+  spawn_cooldown: 0
+  spawn_delay: 0
   side: 0
   line: 
-  dire_bot: []
-  dire_top: []
-  radiant_bot: []
-  radiant_top: []
+  wey_points: []
   creeps_to_spawn: []
 --- !u!1 &808813676
 GameObject:
@@ -1884,7 +1884,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &926927598
 GameObject:
@@ -1995,7 +1995,7 @@ Transform:
   - {fileID: 1464863296}
   - {fileID: 1047518637}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975493656
 GameObject:
@@ -2259,7 +2259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1047518637
 Transform:
   m_ObjectHideFlags: 0
@@ -2286,12 +2286,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfafc6101f224d449a7e1b07e0da6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_timer: 0
+  spawn_cooldown: 0
+  spawn_delay: 0
   side: 0
   line: top
-  dire_bot: []
-  dire_top: []
-  radiant_bot: []
-  radiant_top: []
+  wey_points: []
   creeps_to_spawn: []
 --- !u!1 &1050904142
 GameObject:
@@ -2562,7 +2562,7 @@ Transform:
   - {fileID: 340374393}
   - {fileID: 1474772315}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1120055120
 GameObject:
@@ -2791,7 +2791,7 @@ Transform:
   - {fileID: 1180462862}
   - {fileID: 166412283}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197907993
 GameObject:
@@ -3285,106 +3285,6 @@ Transform:
   m_Father: {fileID: 1080165899}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -217.351, z: 0}
---- !u!1001 &1452597650
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1511933433, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: m_Name
-      value: DemonMelle
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511933435, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: WeyPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 667594502}
-    - target: {fileID: 1511933435, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: WeyPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 147305999}
-    - target: {fileID: 1511933435, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: WeyPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 28150280}
-    - target: {fileID: 1511933435, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: WeyPoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 284283514}
-    - target: {fileID: 1511933435, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: WeyPoints.Array.data[4]
-      value: 
-      objectReference: {fileID: 84685372}
-    - target: {fileID: 1511933435, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: WeyPoints.Array.data[5]
-      value: 
-      objectReference: {fileID: 1622395002}
-    - target: {fileID: 1511933435, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: WeyPoints.Array.data[6]
-      value: 
-      objectReference: {fileID: 1589275783}
-    - target: {fileID: 1511933435, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
-      propertyPath: WeyPoints.Array.data[7]
-      value: 
-      objectReference: {fileID: 1620833332}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -362.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 52.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.61188024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7909504
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -75.451004
-      objectReference: {fileID: 0}
-    - target: {fileID: 7773644100406165194, guid: 96c2795ae4bf2f74894d3a4499632ef6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 96c2795ae4bf2f74894d3a4499632ef6, type: 3}
 --- !u!1 &1464863295
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,13 +3328,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfafc6101f224d449a7e1b07e0da6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn_timer: 0
+  spawn_cooldown: 5
+  spawn_delay: 0.2
   side: 0
   line: bot
-  dire_bot: []
-  dire_top: []
-  radiant_bot: []
-  radiant_top: []
-  creeps_to_spawn: []
+  wey_points:
+  - {fileID: 205417856}
+  - {fileID: 1887960301}
+  - {fileID: 1353408766}
+  - {fileID: 808813677}
+  - {fileID: 1633133567}
+  - {fileID: 1232709924}
+  creeps_to_spawn:
+  - {fileID: 1091067697, guid: d7c695f70cc912542b0f30bde233651c, type: 3}
+  - {fileID: 1091067697, guid: d7c695f70cc912542b0f30bde233651c, type: 3}
 --- !u!1 &1474772314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4408,7 +4316,7 @@ Transform:
   - {fileID: 785088101}
   - {fileID: 564809564}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1825344914
 GameObject:

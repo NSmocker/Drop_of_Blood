@@ -8,7 +8,8 @@ public partial class PersonStatus : MonoBehaviour
 
    public gameCategory category;
    public gameSide side;
-    public rangeKind kind;
+
+   public rangeKind kind;
 
 
     public int hp_current, hp_max, mp_max, mp_current;// Показатели ХП и маны.

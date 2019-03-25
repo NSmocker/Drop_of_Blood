@@ -17,8 +17,14 @@ public class CreepController : MonoBehaviour
     public int current_weypoint=0;
     public float distance_to_point;
     public Collider[] objects;
-    public GameObject[] Persons;
+    public GameObject[] Enemys;
+    public float[] enemys_distances;
 
+
+
+
+    GameObject nearest_enemy = null;
+    float nearEnemy_distance = -100f;
 
 
     public void AnimationControll()
@@ -35,16 +41,44 @@ public class CreepController : MonoBehaviour
     public void ScanEnviro()
     {
         objects = Physics.OverlapSphere(transform.position, 10f);
-        foreach(Collider x in objects)
+        foreach(Collider x in objects) // Смотрит ближайшие обьекты в радиусе 10 игровых метром и отбирает те, у которых есть компонент статуса персонажа.
         {
             PersonStatus st = x.gameObject.GetComponent<PersonStatus>();
-            if(st!=null && !Persons.Contains(x.gameObject))Persons = Persons.Concat(new GameObject[]{ x.gameObject}).ToArray();
+            if (st != null && !Enemys.Contains(x.gameObject)) { // Если у объекта ЕСТЬ статус, и его нету в списке врагов.
+                if(st.side!= status.side) // Если у статуса объекта статус НЕ ТАКОЙ как у нас
+                Enemys = Enemys.Concat(new GameObject[] { x.gameObject }).ToArray(); // заносим его в список врагов, и пи**им.
+               // enemys_distances = enemys_distances.Concat(new float[] { Vector3.Distance(transform.position, x.gameObject.transform.position)}).ToArray();// не работает, нужно пофиксить.
+            }
             st = null;
         }
-        foreach (GameObject x in Persons)
+        foreach (GameObject x in Enemys)
         {
-         if (!objects.Contains(x.GetComponent<Collider>())) Persons = Persons.Where(val => val != x).ToArray();
+         if (!objects.Contains(x.GetComponent<Collider>()  )) Enemys = Enemys.Where(val => val != x).ToArray();// Если в списке объектов нет колайдера из списка "Врагов". 
+         // Мы оставляем все объекты, которые остались в списке коллайдеров.
+
+       
+
         }
+        
+        /*
+        foreach (GameObject x in Enemys)
+        { // Ищем ближайшего из врагов, берем его в таргет и начинаем пинать.
+
+            if (Enemys.Contains(x))
+            {
+            var dist = Vector3.Distance(transform.position, x.transform.position);
+            if (nearEnemy_distance < dist && dist<5){ nearEnemy_distance = dist; nearest_enemy = x;}
+            }
+        }
+
+    */
+
+
+
+
+
+
+
     }
     public void RotateToTarget(Transform target_pos)
     {
